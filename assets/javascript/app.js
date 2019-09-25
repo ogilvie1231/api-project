@@ -1,8 +1,6 @@
 var topics = ['it&#39s always sunny in philedelphia', 'arrested development', 'the simpsons', 'king of the hill', 'flight of the conchords', 'the office', 'the league', 'workaholics', 'bobs burgers', 'parks and rec']
 
-searchTitle = function() {
-    searchTerm.toUpperCase()
-}
+
 
 function buttonCreate() {
     $('#buttonDisplay').empty();
@@ -21,7 +19,7 @@ $("#find-gif").on("click", function(event) {
     console.log('search input: ' + searchTerm);
     gifFinder(searchTerm)
     topics.push(searchTerm);
-    $("#titleDisplay").html('<h1>' + searchTitle + '</h1>');
+    $("#titleDisplay").html('<h1>' + searchTerm + '</h1>');
     buttonCreate();
 
 
