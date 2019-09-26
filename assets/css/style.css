@@ -12,6 +12,7 @@ body {
     padding: 1%;
     margin: auto;
     background-color: #dcd7fa;
+    text-align: center;
 }
 
 button {
@@ -44,8 +45,6 @@ img {
 
 #find-gif {
     position: relative;
-    left: 360px;
-    bottom: 20px;
 }
 
 body {

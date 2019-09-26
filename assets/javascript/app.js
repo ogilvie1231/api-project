@@ -6,10 +6,11 @@ function buttonCreate() {
     $('#buttonDisplay').empty();
     for (var i = 0; i < topics.length; i++) {
         $('#buttonDisplay').append('<button class="button">' + topics[i] + '</button>');
-    }
-}
+    };
+};
 
 buttonCreate();
+
 
 $("#find-gif").on("click", function(event) {
 
@@ -30,10 +31,6 @@ $(document).on('click', '.button', function() {
     var getButton = $(this).text();
     console.log('button info: ' + getButton);
     gifFinder(getButton);
-
-
-
-
 
 });
 
@@ -71,14 +68,18 @@ function gifFinder(searchTerm) {
             gifImage.attr("class", "gif");
             gifImage.attr("otherURL", results[i].images.fixed_height.url)
 
-
+            var titleCase = searchTerm.split(' ').map(function(word) {
+                word = word.split('');
+                word[0] = word[0].toUpperCase();
+                return word.join('');
+            }).join(' ');
 
             gifDiv.prepend(gifImage);
             gifDiv.prepend(p);
             console.log(gifImage);
             $("#gifDisplay").prepend(gifDiv);
-            $("#titleDisplay").html('<h1>' + searchTerm + '</h1>');
+            $("#titleDisplay").html('<h1>' + titleCase + '</h1>');
             console.log('gif div: ' + gifDiv)
         };
     });
-}
+};
